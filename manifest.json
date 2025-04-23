@@ -1,0 +1,14 @@
+
+{
+  "name": "MSA Messenger",
+  "short_name": "MSA",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f9d71c",
+  "description": "Secure Emoji-Based Messenger",
+  "icons": [{
+    "src": "icon.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }]
+}

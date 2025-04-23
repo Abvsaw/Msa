@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f9d71c" />
+  <title>MSA - Secure Messenger</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>MSA</h1>
+      <div class="status-bar">
+        <span id="dark-toggle">Toggle Theme</span>
+        <span id="user-status">Not Logged In</span>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="login">
+        <input type="text" id="emojiLogin" placeholder="Enter Emoji Key" />
+        <input type="text" id="gistToken" placeholder="GitHub Gist Token (optional)" />
+        <button onclick="login()">Login</button>
+      </section>
+
+      <section class="chat" style="display: none">
+        <div class="chat-header">
+          <span id="usernameDisplay">User</span>
+          <button onclick="logout()">Logout</button>
+        </div>
+        <div class="messages" id="messages"></div>
+        <div class="chat-input">
+          <input type="text" id="messageInput" placeholder="Type a message..." />
+          <button onclick="sendMessage()">Send</button>
+        </div>
+      </section>
+
+      <section class="business-tools" style="display: none">
+        <h2>Business Tools</h2>
+        <textarea id="catalog" placeholder="Add your catalog or product list here..."></textarea>
+        <input type="text" id="email" placeholder="Business Email" />
+        <input type="text" id="link" placeholder="Website or Store Link" />
+        <button onclick="saveBusinessProfile()">Save Profile</button>
+      </section>
+
+      <section class="bot-builder" style="display: none">
+        <h2>Create a Bot</h2>
+        <input type="text" id="botTrigger" placeholder="Trigger Word" />
+        <input type="text" id="botResponse" placeholder="Response" />
+        <button onclick="addBot()">Add Bot</button>
+        <ul id="botList"></ul>
+      </section>
+
+      <section class="encryption-tools" style="display: none">
+        <h2>Encryption Options</h2>
+        <input type="text" id="emojiEncryptKey" placeholder="Emoji Encryption Key" />
+        <button onclick="lockMessages()">Encrypt</button>
+        <button onclick="unlockMessages()">Decrypt</button>
+      </section>
+
+      <section class="away-message" style="display: none">
+        <h2>Away Message</h2>
+        <textarea id="awayMessage" placeholder="Your away message..."></textarea>
+        <button onclick="saveAwayMessage()">Set Away</button>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+</body>
+</html>

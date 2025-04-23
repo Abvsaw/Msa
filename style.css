@@ -1,0 +1,55 @@
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+:root {
+  --bg: #fff;
+  --text: #000;
+  --primary: #f9d71c;
+}
+[data-theme='dark'] {
+  --bg: #121212;
+  --text: #f0f0f0;
+}
+.app {
+  padding: 1rem;
+  max-width: 600px;
+  margin: auto;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.status-bar span {
+  margin-left: 10px;
+  cursor: pointer;
+}
+.main section {
+  margin-top: 1.5rem;
+}
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 0.5rem;
+}
+button {
+  background: var(--primary);
+  border: none;
+  padding: 10px;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+.messages {
+  border: 1px solid #ccc;
+  height: 200px;
+  overflow-y: auto;
+  margin: 1rem 0;
+}
+.message {
+  padding: 5px;
+  border-bottom: 1px solid #eee;
+}
